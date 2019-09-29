@@ -1,6 +1,9 @@
+#' @param configuration_header A header within the configuration file
+#' @param configuration_file Pathway to the configuration file
 #' @importFrom DBI dbConnect
 #' @importFrom RPostgres Postgres
 #' @importFrom configr read.config
+#' @returns A database connection to postgres
 #' @export postgres_connection
 postgres_connection <- function(configuration_header = "postgres",
                                 configuration_file = "config.ini") {
