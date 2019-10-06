@@ -2,7 +2,9 @@
 
 <!-- badges: start -->
   [![Travis build status](https://travis-ci.org/fdrennan/connectr.svg?branch=master)](https://travis-ci.org/fdrennan/connectr)
-  <!-- badges: end -->
+  [![codecov](https://codecov.io/gh/fdrennan/connectr/branch/master/graph/badge.svg)](https://codecov.io/gh/fdrennan/connectr)
+<!-- badges: end -->
+  
   
 This package uses the configr package to read a configuration file and manage connections to various database resources.
 
