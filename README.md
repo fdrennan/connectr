@@ -1,5 +1,6 @@
 # connectr
 
+<!--  http://jtleek.com/protocols/travis_bioc_devel/ -->
 <!-- badges: start -->
   [![Travis build status](https://travis-ci.org/fdrennan/connectr.svg?branch=master)](https://travis-ci.org/fdrennan/connectr)
   [![codecov](https://codecov.io/gh/fdrennan/connectr/branch/master/graph/badge.svg)](https://codecov.io/gh/fdrennan/connectr)
