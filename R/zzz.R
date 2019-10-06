@@ -14,6 +14,7 @@
 
   if (!file.exists(config_path)) {
     packageStartupMessage(glue('Creating default config.ini file at {config_path}'))
+    starting_configuration <- "[localhost_postgres]\ndbname = postgres\nhost = localhost\nport = 5432\nuser = postgres\npassword = docker\n"
     write_file(config_default, config_path)
   }
 }
