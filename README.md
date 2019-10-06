@@ -25,3 +25,23 @@ password = password
 con <- postgres_connection()
 db_disconnect(con)
 ```
+
+
+Using Docker with default values
+```
+library(connectr)
+
+start_postgres()
+
+con <-
+  con_postgres(
+    configuration_header = 'postgres_docker',
+  )
+
+DBI::dbWriteTable(con, 'mtcars', mtcars)
+DBI::dbReadTable(con, 'mtcars')
+
+db_disconnect(connection = con)
+
+stop_postgres()
+```

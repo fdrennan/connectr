@@ -5,3 +5,4 @@ config.ini
 main.R
 ^\.travis\.yml$
 ^codecov\.yml$
+misc

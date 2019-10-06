@@ -1,0 +1,20 @@
+#' @importFrom readr write_file
+#' @importFrom glue glue
+.onLoad <- function(libname, pkgname){
+  connectr_dir <- '~/.connectr'
+  if (!dir.exists(connectr_dir)) {
+    message('Creating base directory for connectr at ~/.connectr')
+    dir.create(connectr_dir)
+  } else {
+    message('Using base directory for connectr at ~/.connectr')
+  }
+
+  config_name <-  'config.ini'
+  config_path <- file.path(connectr_dir, config_name)
+
+  if (!file.exists(config_path)) {
+    message(glue('Creating default config.ini file at {config_path}'))
+    write_file(config_default, config_path)
+  }
+}
+
