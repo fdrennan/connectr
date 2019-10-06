@@ -1,8 +1,8 @@
+#' Creates default paramters for connectr
 #' @importFrom readr write_file
 #' @importFrom glue glue
 #' @export connectr_init
 connectr_init <- function() {
-
   # Create connectr directory
   connectr_dir <- '~/.connectr'
   if (!dir.exists(connectr_dir)) {
