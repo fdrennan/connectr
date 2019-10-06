@@ -1,20 +1,40 @@
+#' Create a connection to Postgres
+#'
 #' @param configuration_header A header within the configuration file
-#' @param configuration_file Pathway to the configuration file
+#' @param configuration_location Pathway to the configuration file
 #' @importFrom DBI dbConnect
 #' @importFrom RPostgres Postgres
 #' @importFrom configr read.config
-#' @returns A database connection to postgres
+#' @importFrom glue glue
+#'
+#' @return  A database connection to postgres
+#' @examples
+#'
+#'\dontrun{
+#' con <-
+#'   postgres_connect(configuration_header = "postgres", configuration_location = 'config.ini')
+#'}
 #' @export postgres_connection
-postgres_connection <- function(configuration_header = "postgres",
-                                configuration_file = "config.ini") {
+postgres_connection <- function(configuration_header   = "postgres",
+                                configuration_location = "~/.config.ini") {
 
-  configuration_file <- read.config(configuration_file)
+  config_exists <- file.exists(configuration_location)
+
+  if (config_exists) {
+    message(glue('Using file found at: {configuration_location}'))
+  } else {
+    stop(glue('File not found at {configuration_location}'))
+  }
+
+  configuration_file <- read.config(configuration_location)
   connection <- dbConnect(
     Postgres(),
-    dbname   = config_file[["postgres"]][["dbname"]],
-    host     = config_file[["postgres"]][["host"]],
-    port     = config_file[["postgres"]][["port"]],
-    user     = config_file[["postgres"]][["user"]],
-    password = config_file[["postgres"]][["password"]]
+    dbname   = configuration_file[[configuration_header]][["dbname"]],
+    host     = configuration_file[[configuration_header]][["host"]],
+    port     = configuration_file[[configuration_header]][["port"]],
+    user     = configuration_file[[configuration_header]][["user"]],
+    password = configuration_file[[configuration_header]][["password"]]
   )
+
+  return(connection)
 }

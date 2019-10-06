@@ -2,3 +2,4 @@ config.ini
 .config.ini
 .Rproj.user
 .Rdata
+main.R
