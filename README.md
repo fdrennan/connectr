@@ -21,5 +21,5 @@ password = password
 
 ```
 con <- postgres_connection()
-DBI::dbDisconnect(con)
+db_disconnect(con)
 ```
