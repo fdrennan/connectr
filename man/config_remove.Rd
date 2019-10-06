@@ -6,6 +6,9 @@
 \usage{
 config_remove(header = NULL)
 }
+\arguments{
+\item{header}{The refrence to the config parameters within config.ini}
+}
 \description{
 Removes value from ini
 }

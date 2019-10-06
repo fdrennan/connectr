@@ -1,6 +1,5 @@
 #' Displays current configuration file
-#'
-#' @example
+#' @param header The refrence to the config parameters within config.ini
 #' @importFrom readr read_file
 #' @importFrom glue glue
 #' @importFrom lazyeval lazy_dots

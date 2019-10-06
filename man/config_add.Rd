@@ -6,6 +6,9 @@
 \usage{
 config_add(header = NULL, ...)
 }
+\arguments{
+\item{header}{The refrence to the config parameters within config.ini}
+}
 \description{
 Displays current configuration file
 }

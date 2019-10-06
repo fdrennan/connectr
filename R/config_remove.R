@@ -1,4 +1,5 @@
 #' Removes value from ini
+#' @param header The refrence to the config parameters within config.ini
 #' @importFrom ini read.ini
 #' @importFrom ini write.ini
 #' @importFrom glue glue
