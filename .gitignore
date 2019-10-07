@@ -4,3 +4,4 @@ config.ini
 .Rdata
 main.R
 misc
+.Rprofile

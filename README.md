@@ -32,11 +32,11 @@ Using Docker with default values
 ```
 library(connectr)
 
-start_postgres()
+postgres_start()
 
 con <-
   con_postgres(
-    configuration_header = 'postgres_docker',
+    configuration_header = 'localhost_postgres'
   )
 
 DBI::dbWriteTable(con, 'mtcars', mtcars)
@@ -44,5 +44,5 @@ DBI::dbReadTable(con, 'mtcars')
 
 db_disconnect(connection = con)
 
-stop_postgres()
+postgres_stop()
 ```

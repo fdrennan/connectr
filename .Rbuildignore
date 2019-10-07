@@ -6,3 +6,4 @@ main.R
 ^\.travis\.yml$
 ^codecov\.yml$
 misc
+.Rprofile

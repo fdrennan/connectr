@@ -4,7 +4,7 @@
 \alias{connectr_init}
 \title{Creates default paramters for connectr}
 \usage{
-connectr_init()
+connectr_init(connectr_base_dir = "~")
 }
 \description{
 Creates default paramters for connectr

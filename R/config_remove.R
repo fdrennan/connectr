@@ -6,7 +6,7 @@
 #' @export config_remove
 config_remove <- function(header = NULL) {
 
-  config_file_path <- '~/.connectr/config.ini'
+  config_file_path <-  file.path(read.ini('.connectr.ini')$CONNECTR$CONNECTR_DIR, 'config.ini')
   config_file <- read.ini(config_file_path)
 
   if (! header %in% names(config_file)) {
