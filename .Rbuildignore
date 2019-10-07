@@ -5,3 +5,7 @@ config.ini
 main.R
 ^\.travis\.yml$
 ^codecov\.yml$
+misc
+.Rprofile
+.connectr
+.connectr.ini
