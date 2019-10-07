@@ -1,5 +1,6 @@
 #' Displays current configuration file
 #' @param header The refrence to the config parameters within config.ini
+#' @param ... dplyr like syntax for creating ini
 #' @importFrom readr read_file
 #' @importFrom glue glue
 #' @importFrom lazyeval lazy_dots
