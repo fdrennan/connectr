@@ -7,5 +7,5 @@ main.R
 ^codecov\.yml$
 misc
 .Rprofile
-.connector
+.connectr
 .connectr.ini
