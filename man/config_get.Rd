@@ -6,6 +6,9 @@
 \usage{
 config_get(header = NULL)
 }
+\arguments{
+\item{header}{A header in the config.ini file}
+}
 \description{
 Gets a configuration
 }

@@ -1,5 +1,5 @@
 #' Gets a configuration
-#'
+#' @param  header A header in the config.ini file
 #' @importFrom ini read.ini
 #' @export config_get
 config_get <- function(header = NULL) {

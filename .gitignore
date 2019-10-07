@@ -5,5 +5,3 @@ config.ini
 main.R
 misc
 .Rprofile
-.connector
-.connectr.ini
