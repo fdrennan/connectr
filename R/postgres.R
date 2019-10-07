@@ -6,7 +6,6 @@
 #' psql -h localhost -U postgres -d postgres
 #'
 #' @param configuration_header A header within the configuration file
-#' @param configuration_location Pathway to the configuration file
 #' @importFrom DBI dbConnect
 #' @importFrom RPostgres Postgres
 #' @importFrom ini read.ini
