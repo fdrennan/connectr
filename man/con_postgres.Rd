@@ -8,8 +8,6 @@ con_postgres(configuration_header = "postgres_docker")
 }
 \arguments{
 \item{configuration_header}{A header within the configuration file}
-
-\item{configuration_location}{Pathway to the configuration file}
 }
 \value{
 A database connection to postgres
