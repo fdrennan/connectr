@@ -1,9 +1,11 @@
-#' Creates default paramters for connectr
+#' Creates default files for connectr
+#'
+#' @param connectr_base_dir Where the connectr file should be located
 #' @importFrom readr write_file
 #' @importFrom glue glue
 #' @importFrom ini write.ini
-#' @export connectr_init
-connectr_init <- function(connectr_base_dir = '~') {
+#' @export generate_files
+generate_files <- function(connectr_base_dir = '~') {
 
   connectr_environment <- '.connectr.ini'
   connectr_directory <- file.path(connectr_base_dir, '.connectr')

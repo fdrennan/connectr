@@ -2,9 +2,11 @@
 
 export(con_postgres)
 export(config_add)
+export(config_get)
 export(config_read)
 export(config_remove)
 export(db_disconnect)
+export(generate_files)
 export(postgres_start)
 export(postgres_stop)
 importFrom(DBI,dbConnect)
