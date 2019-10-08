@@ -4,7 +4,7 @@
 \alias{con_postgres}
 \title{Create a connection to Postgres}
 \usage{
-con_postgres(configuration_header = "postgres_docker")
+con_postgres(configuration_header = "localhost_postgres")
 }
 \arguments{
 \item{configuration_header}{A header within the configuration file}

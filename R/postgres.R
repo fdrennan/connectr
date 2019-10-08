@@ -19,7 +19,7 @@
 #'   postgres_connect(configuration_header = "postgres", configuration_location = 'config.ini')
 #'}
 #' @export con_postgres
-con_postgres <- function(configuration_header   = "postgres_docker") {
+con_postgres <- function(configuration_header   = "localhost_postgres") {
 
   configuration_location <- file.path(read.ini('.connectr.ini')$CONNECTR$CONNECTR_DIR, 'config.ini')
   configuration_file <- read.ini(configuration_location)
@@ -28,14 +28,24 @@ con_postgres <- function(configuration_header   = "postgres_docker") {
     stop(glue('Configuration {configuration_header} not found in file {configuration_location}'))
   }
 
-  connection <- dbConnect(
-    Postgres(),
-    dbname   = configuration_file[[configuration_header]][["dbname"]],
-    host     = configuration_file[[configuration_header]][["host"]],
-    port     = configuration_file[[configuration_header]][["port"]],
-    user     = configuration_file[[configuration_header]][["user"]],
-    password = configuration_file[[configuration_header]][["password"]]
-  )
+  if(configuration_header == 'localhost_postgres') {
+    connection <- dbConnect(
+      Postgres(),
+      dbname   = configuration_file[[configuration_header]][["dbname"]],
+      host     = configuration_file[[configuration_header]][["host"]],
+      port     = configuration_file[[configuration_header]][["port"]]
+    )
+  } else {
+    connection <- dbConnect(
+      Postgres(),
+      dbname   = configuration_file[[configuration_header]][["dbname"]],
+      host     = configuration_file[[configuration_header]][["host"]],
+      port     = configuration_file[[configuration_header]][["port"]],
+      user     = configuration_file[[configuration_header]][["user"]],
+      password = configuration_file[[configuration_header]][["password"]]
+    )
+  }
+
 
   return(connection)
 }
