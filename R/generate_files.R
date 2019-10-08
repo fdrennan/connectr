@@ -14,6 +14,14 @@ generate_files <- function(connectr_base_dir = '~') {
   ## Write structure to file
   write.ini(connectr_ini, connectr_environment)
 
+  if(!file.exists('.gitignore')) {
+    file.create('.gitignore')
+  }
+
+  if(!'.connectr' %in% readr::read_lines('.gitignore')) {
+    write('.connectr', '.gitignore', append = TRUE)
+    write('.connectr.ini', '.gitignore', append = TRUE)
+  }
 
   if (!dir.exists(connectr_directory)) {
     message(glue('Creating base directory for connectr at {connectr_directory}'))
